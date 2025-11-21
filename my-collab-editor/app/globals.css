@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tiptap Specific Styles */
+
+/* 1. Remove the blue border when clicking the editor */
+.ProseMirror {
+    outline: none;
+}
+
+/* 2. Give the editor a minimum height so it feels like a page */
+.ProseMirror {
+    min-height: 500px;
+    padding-bottom: 50px; /* Space at bottom for scrolling */
+}
+
+/* 3. Placeholder text style (Optional, works if extension is added later) */
+.ProseMirror p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
